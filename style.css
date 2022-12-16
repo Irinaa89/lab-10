@@ -1,76 +1,225 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: sans-serif;
-  background-color: rgb(255, 255, 255);
+  margin: 0;
+  font-family: "Arial";
 }
 
-.wrapper {
+.header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
   width: 100%;
-  max-width: 1024px;
-  margin: 50px auto;
-  padding: 0 15px;
+  display: flex;
+  color: white;
+  padding: 10px;
+  background-color: black;
+  align-items: center;
 }
 
-.text-input {
-  margin-top: 125px;
+.footer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  background-color: black;
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: rgb(255, 10, 186);
+.body {
+  display: flex;
+  min-height: 100vh;
+  color: black;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: rgb(255, 10, 186);
+.item {
+  margin-left: 20%;
+}
 
-textarea {
-  width: 100%;
+.form_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  width: 300px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px #ccc;
+  letter-spacing: 1px;
+}
+
+.form_title {
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
+.form_group {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.form_input {
+  letter-spacing: 1px;
   font-size: 16px;
-  resize: none;
-  margin-bottom: 20px;
+  width: 100%;
+  padding: 0 0 10px 0;
+  border: none;
+  border-bottom: 1px solid #5f5e5f;
+  background-color: transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form_label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: #5f5e5f;
+  transition: 0.3s;
+}
+
+.form_checkbox {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 16px;
+  margin: 0 0 32px 0;
+}
+
+.checkbox {
+  margin: 10px;
+}
+
+.form_button {
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.form_input:focus {
+  border-bottom: 1px solid #1a73a8;
+}
+
+.form_input:focus ~ .form_label,
+.form_input:not(:placeholder-shown) ~ .form_label {
+  top: -18px;
+  font-size: 12px;
+  color: #5f5e5f;
+}
+
+.form_feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+}
+
+.form_2 {
+  width: 400px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px #ccc;
+  letter-spacing: 1px;
+}
+
+.form_div {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.form_radio {
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.form_select {
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form_file {
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.src_error {
+  color: rgb(255, 0, 0);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.src_text {
+  color: #000000;
+  font-style: italic;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.styletable {
+  margin: 0 20%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.tables {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  background-color: white;
+  border-collapse: collapse;
+}
+
+.tables th {
   padding: 5px;
 }
 
-button {
-  margin-top: 20px;
+.tables td {
+  padding: 5px;
+  border-top: 1px solid #ccc;
+}
+
+.left {
+  text-align: left;
+}
+
+.tables tr {
+  transition: all 0.3s;
+}
+
+.tables tr:hover {
+  background-color: #ccc;
+}
+
+.button_drug {
+  letter-spacing: 1px;
+  font-size: 16px;
   padding: 10px 20px;
-  font-size: 18px;
-  background-color: rgb(255, 10, 186);
-  border: 2px solid rgb(255, 10, 186);
-  color: #fff;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
   cursor: pointer;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-  transition: 0.1s ease-in;
-  -webkit-transition: 0.1s ease-in;
-  -moz-transition: 0.1s ease-in;
-  -ms-transition: 0.1s ease-in;
-  -o-transition: 0.1s ease-in;
+  margin-bottom: 30px;
 }
 
-button:hover {
-  background-color: inherit;
-  color: rgb(0, 94, 255);
-}
-
-p {
-  margin: 5px 0;
-}
-
-span {
-  color: rgb(0, 94, 255);
-}
-
-li {
-  list-style: none;
-  margin-left: 15px;
+.button_drug a {
+  color: white;
+  text-decoration: none;
 }
